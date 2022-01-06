@@ -56,10 +56,10 @@ async def on_message(message):
                     text = text[:99999]
                     truncated = True
                 async with aiohttp.ClientSession() as session:
-                    async with session.post('https://bin.birdflop.com/documents', data=text) as req:
+                    async with session.post('http://bin.fluffydestroy.com/documents', data=text) as req:
                         key = json.loads(await req.read())['key']
                 response = ""
-                response = response + "https://bin.birdflop.com/" + key
+                response = response + "http://bin.fluffydestroy.com/" + key
                 response = response + "\nRequested by " + message.author.mention
                 if truncated:
                     response = response + "\n(file was truncated because it was too long.)"
@@ -69,7 +69,7 @@ async def on_message(message):
                     await message.channel.send(embed=embed_var)
                 except:
                     print("Permission error")
-                logging.info(f'File uploaded by {message.author} ({message.author.id}): https://bin.birdflop.com/{key}')
+                logging.info(f'File uploaded by {message.author} ({message.author.id}): http://bin.fluffydestroy.com/{key}')
     # Pastebin is blocked in some countries
     words = message.content.replace("\n", " ").split(" ")
     for word in words:
@@ -83,10 +83,10 @@ async def on_message(message):
                 text = text[:99999]
                 truncated = True
             async with aiohttp.ClientSession() as session:
-                async with session.post('https://bin.birdflop.com/documents', data=text) as req:
+                async with session.post('http://bin.fluffydestroy.com/documents', data=text) as req:
                     key = json.loads(await req.read())['key']
             response = ""
-            response = response + "https://bin.birdflop.com/" + key
+            response = response + "http://bin.fluffydestroy.com/" + key
             response = response + "\nRequested by " + message.author.mention
             if truncated:
                 response = response + "\n(file was truncated because it was too long.)"
@@ -103,11 +103,11 @@ async def on_message(message):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f'Birdflop bot ping is {round(bot.latency * 1000)}ms')
+    await ctx.send(f'timingbot bot ping is {round(bot.latency * 1000)}ms')
 
 @bot.command()
 async def invite(ctx):
-    await ctx.send('Invite me with this link:\nhttps://discord.com/oauth2/authorize?client_id=787929894616825867&permissions=0&scope=bot')
+    await ctx.send('Invite me with this link:\nhttps://discord.com/oauth2/authorize?client_id=928652438964158514&permissions=0&scope=bot')
 
 @bot.command(name="react", pass_context=True)
 @has_permissions(administrator=True)
