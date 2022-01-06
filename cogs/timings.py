@@ -98,7 +98,7 @@ class Timings(commands.Cog):
                 timing_cost = int(request["timingsMaster"]["system"]["timingcost"])
                 if timing_cost > 300:
                     embed_var.add_field(name="❌ Timingcost",
-                                        value=f"Your timingcost is {timing_cost}. Your cpu is overloaded and/or slow. Find a [better host](https://www.birdflop.com).")
+                                        value=f"Your timingcost is {timing_cost}. Your cpu is overloaded and/or slow. Find a [better host](https://www.bisecthosting.com/).")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -183,10 +183,10 @@ class Timings(commands.Cog):
                 cpu = int(request["timingsMaster"]["system"]["cpu"])
                 if cpu == 1:
                     embed_var.add_field(name="❌ Threads",
-                                        value=f"You have only {cpu} thread. Find a [better host](https://www.birdflop.com).")
+                                        value=f"You have only {cpu} thread. Find a [better host](https://www.bisecthosting.com/).")
                 if cpu == 2:
                     embed_var.add_field(name="❌ Threads",
-                                        value=f"You have only {cpu} threads. Find a [better host](https://www.birdflop.com).")
+                                        value=f"You have only {cpu} threads. Find a [better host](https://www.bisecthosting.com/).")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
